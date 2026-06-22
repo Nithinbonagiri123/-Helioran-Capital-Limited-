@@ -28,8 +28,10 @@ type FeedResponse = {
 const ease = [0.22, 1, 0.36, 1] as const;
 
 export function Insights() {
+  // generatedAt starts empty so server and client render identically.
+  // It populates after the first fetch (or on mount fallback).
   const [data, setData] = useState<FeedResponse>({
-    generatedAt: new Date().toISOString(),
+    generatedAt: "",
     tickers: baseTickers,
     sectors: sectorPulse,
     property: propertyMetrics,
@@ -62,11 +64,13 @@ export function Insights() {
     };
   }, []);
 
-  const lastUpdated = new Date(data.generatedAt).toLocaleTimeString("en-IE", {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  });
+  const lastUpdated = data.generatedAt
+    ? new Date(data.generatedAt).toLocaleTimeString("en-IE", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      })
+    : "—:—:—";
 
   return (
     <section id="insights" className="relative py-20 sm:py-28 lg:py-40">
@@ -95,7 +99,9 @@ export function Insights() {
                 />
                 Live feed
                 <span className="text-white/35">·</span>
-                <span className="tabular">{lastUpdated}</span>
+                <span className="tabular" suppressHydrationWarning>
+                  {lastUpdated}
+                </span>
               </div>
               <p className="mt-4 max-w-xs text-[13px] leading-relaxed text-white/45 md:ml-auto">
                 Synthesised from listed equities, sovereigns, FX, and Irish
