@@ -11,7 +11,7 @@ const config: Config = {
     container: {
       center: true,
       padding: {
-        DEFAULT: "1.25rem",
+        DEFAULT: "1.125rem",
         sm: "1.5rem",
         lg: "2rem",
         xl: "2.5rem",
@@ -19,6 +19,14 @@ const config: Config = {
       screens: {
         "2xl": "1320px",
       },
+    },
+    screens: {
+      xs: "420px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
     },
     extend: {
       colors: {
@@ -52,8 +60,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui"],
-        display: ["var(--font-instrument)", "Georgia", "serif"],
+        sans: ['"Satoshi"', "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ['"Satoshi"', "ui-sans-serif", "system-ui", "sans-serif"],
+        serif: ["var(--font-fraunces)", "Georgia", "serif"],
         mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
       letterSpacing: {

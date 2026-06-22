@@ -44,14 +44,14 @@ export function Navigation() {
             : "bg-transparent"
         )}
       >
-        <div className="container flex h-[72px] items-center justify-between">
-          <Link href="/" className="group flex items-center gap-3">
+        <div className="container flex h-16 items-center justify-between sm:h-[72px]">
+          <Link href="/" className="group flex items-center gap-2.5 sm:gap-3">
             <Logo />
             <div className="flex flex-col leading-none">
-              <span className="font-display text-[17px] tracking-tight text-white">
+              <span className="font-display text-[15px] font-medium tracking-tight text-white sm:text-[17px]">
                 Helioran Capital
               </span>
-              <span className="mt-1 text-[10px] uppercase tracking-[0.22em] text-white/40">
+              <span className="mt-1 hidden text-[10px] uppercase tracking-[0.22em] text-white/40 xs:inline">
                 Investment Advisory · Ireland
               </span>
             </div>
@@ -101,7 +101,7 @@ export function Navigation() {
             type="button"
             aria-label="Toggle menu"
             onClick={() => setMenuOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/[0.03] md:hidden"
+            className="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/[0.03] md:hidden"
           >
             {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
@@ -115,10 +115,10 @@ export function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 bg-ink-950/95 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 z-40 overflow-y-auto bg-ink-950/95 backdrop-blur-xl md:hidden"
           >
-            <div className="container flex h-full flex-col justify-between pt-28 pb-12">
-              <nav className="flex flex-col gap-2">
+            <div className="container flex min-h-full flex-col justify-between gap-16 pt-24 pb-10">
+              <nav className="flex flex-col gap-1">
                 {navLinks.map((link, i) => (
                   <motion.div
                     key={link.href}
@@ -128,7 +128,7 @@ export function Navigation() {
                   >
                     <Link
                       href={link.href}
-                      className="block border-b border-white/5 py-5 font-display text-3xl tracking-tight text-white"
+                      className="block border-b border-white/5 py-5 font-display text-3xl font-medium tracking-tight text-white"
                     >
                       {link.label}
                     </Link>

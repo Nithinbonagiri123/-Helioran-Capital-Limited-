@@ -1,20 +1,15 @@
-import type { Metadata } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Fraunces } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/sections/Footer";
 
-const inter = Inter({
+// Display serif used only for italic accents (e.g. "with conviction").
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const instrument = Instrument_Serif({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
-  variable: "--font-instrument",
+  weight: ["400", "500"],
+  style: ["italic", "normal"],
+  variable: "--font-fraunces",
   display: "swap",
 });
 
@@ -45,11 +40,26 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#05070d",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${instrument.variable}`}>
+    <html lang="en" className={fraunces.variable}>
+      <head>
+        {/* Satoshi — primary UI / body sans, via Fontshare CDN */}
+        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="" />
+        <link
+          rel="stylesheet"
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap"
+        />
+      </head>
       <body className="min-h-screen font-sans text-white antialiased">
         <Navigation />
         <main className="relative">{children}</main>

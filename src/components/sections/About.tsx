@@ -9,31 +9,31 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export function About() {
   return (
-    <section id="about" className="relative py-32 sm:py-40">
+    <section id="about" className="relative py-20 sm:py-28 lg:py-40">
       <div className="container">
-        <div className="grid grid-cols-12 gap-x-10 gap-y-16">
+        <div className="grid grid-cols-12 gap-x-10 gap-y-12 lg:gap-y-16">
           <div className="col-span-12 lg:col-span-5">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease }}
-              className="sticky top-32"
+              className="lg:sticky lg:top-32"
             >
-              <p className="eyebrow mb-8">About Helioran</p>
-              <h2 className="font-display text-balance text-4xl leading-[1.05] tracking-tightest sm:text-5xl md:text-6xl">
+              <p className="eyebrow mb-6 sm:mb-8">About Helioran</p>
+              <h2 className="font-display text-balance text-3xl font-medium leading-[1.05] tracking-tightest sm:text-5xl md:text-6xl">
                 A practice built for the
-                <span className="italic text-white/85"> decisions </span>
+                <span className="font-serif italic text-white/90"> decisions </span>
                 that change the trajectory of capital.
               </h2>
-              <p className="mt-8 max-w-md text-[16px] leading-relaxed text-white/60">
+              <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/60 sm:mt-8 sm:text-[16px]">
                 Founded in Ireland, Helioran Capital advises businesses,
                 investors, and developers across the moments that define value
                 — capital formation, transactions, expansion, and stewardship.
               </p>
               <Link
                 href="/about"
-                className="mt-10 inline-flex items-center gap-2 text-[14px] tracking-tight text-white/85 underline-offset-4 hover:underline"
+                className="mt-8 inline-flex items-center gap-2 text-[14px] tracking-tight text-white/85 underline-offset-4 hover:underline sm:mt-10"
               >
                 The full story
                 <ArrowUpRight className="h-4 w-4" />
@@ -58,19 +58,19 @@ export function About() {
                 priority={false}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/30 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-10">
-                <p className="font-display text-2xl leading-snug tracking-tight text-white sm:text-3xl">
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10">
+                <p className="font-display text-xl font-medium leading-snug tracking-tight text-white sm:text-3xl">
                   &ldquo;Independent counsel, institutional rigour, founder
                   pragmatism — applied to every mandate.&rdquo;
                 </p>
-                <div className="mt-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.18em] text-white/55">
+                <div className="mt-4 flex items-center gap-3 text-[10px] uppercase tracking-[0.18em] text-white/55 sm:mt-6 sm:text-[11px]">
                   <span className="h-px w-8 bg-white/40" />
                   Helioran Capital — Operating Principle
                 </div>
               </div>
             </motion.div>
 
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div className="mt-8 grid grid-cols-1 gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6">
               <Pillar
                 eyebrow="Mission"
                 body="To empower businesses and investors with expert guidance, strategic insight, and practical solutions that drive sustainable growth and long-term success."
@@ -94,10 +94,10 @@ function Pillar({ eyebrow, body }: { eyebrow: string; body: string }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.7, ease }}
-      className="glass relative overflow-hidden rounded-lg p-7"
+      className="glass relative overflow-hidden rounded-lg p-6 sm:p-7"
     >
       <p className="eyebrow">{eyebrow}</p>
-      <p className="mt-5 text-[15px] leading-relaxed text-white/75">{body}</p>
+      <p className="mt-4 text-[14px] leading-relaxed text-white/75 sm:mt-5 sm:text-[15px]">{body}</p>
     </motion.div>
   );
 }

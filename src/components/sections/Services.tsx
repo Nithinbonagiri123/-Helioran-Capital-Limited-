@@ -15,17 +15,17 @@ export function Services() {
   const Icon = active.icon;
 
   return (
-    <section id="services" className="relative py-32 sm:py-40">
+    <section id="services" className="relative py-20 sm:py-28 lg:py-40">
       <div className="container">
-        <div className="grid grid-cols-12 items-end gap-y-10">
+        <div className="grid grid-cols-12 items-end gap-y-8 sm:gap-y-10">
           <div className="col-span-12 md:col-span-8">
-            <p className="eyebrow mb-6">Practice areas</p>
-            <h2 className="font-display text-balance text-4xl leading-[1.05] tracking-tightest sm:text-5xl md:text-6xl">
-              Twelve disciplines. <span className="italic text-white/85">One</span> standard.
+            <p className="eyebrow mb-5 sm:mb-6">Practice areas</p>
+            <h2 className="font-display text-balance text-3xl font-medium leading-[1.05] tracking-tightest sm:text-5xl md:text-6xl">
+              Twelve disciplines. <span className="font-serif italic text-white/90">One</span> standard.
             </h2>
           </div>
           <div className="col-span-12 md:col-span-4">
-            <p className="max-w-sm text-[15px] leading-relaxed text-white/55 md:ml-auto">
+            <p className="max-w-md text-[14px] leading-relaxed text-white/55 sm:text-[15px] md:ml-auto md:max-w-sm">
               A coordinated practice spanning advisory, transactions, and
               capital — engineered to compound across the lifecycle of a
               business.
@@ -33,7 +33,7 @@ export function Services() {
           </div>
         </div>
 
-        <div className="mt-20 grid grid-cols-12 gap-x-10 gap-y-10">
+        <div className="mt-12 grid grid-cols-12 gap-x-10 gap-y-10 sm:mt-16 lg:mt-20">
           {/* Left: list of services as luxury editorial rows */}
           <div className="col-span-12 lg:col-span-7">
             <ol className="divide-y divide-white/[0.06]">
@@ -47,21 +47,21 @@ export function Services() {
                       onFocus={() => setActiveId(s.id)}
                       onClick={() => setActiveId(s.id)}
                       className={cn(
-                        "group relative grid w-full grid-cols-[auto_1fr_auto] items-center gap-6 py-6 text-left transition-colors duration-300",
+                        "group relative grid w-full grid-cols-[auto_1fr_auto] items-center gap-3 py-5 text-left transition-colors duration-300 sm:gap-6 sm:py-6",
                         isActive ? "text-white" : "text-white/55 hover:text-white/85"
                       )}
                     >
-                      <span className="font-mono text-[11px] tracking-[0.18em] text-white/35">
+                      <span className="font-mono text-[10px] tracking-[0.18em] text-white/35 sm:text-[11px]">
                         {s.number}
                       </span>
-                      <span className="font-display text-2xl tracking-tight sm:text-3xl">
+                      <span className="font-display text-[18px] font-medium leading-tight tracking-tight sm:text-3xl">
                         {s.title}
                       </span>
                       <motion.span
                         animate={{ rotate: isActive ? 45 : 0 }}
                         transition={{ duration: 0.3, ease }}
                         className={cn(
-                          "grid h-9 w-9 place-items-center rounded-full border transition-colors",
+                          "grid h-9 w-9 shrink-0 place-items-center rounded-full border transition-colors",
                           isActive
                             ? "border-white/30 bg-white/10"
                             : "border-white/10 bg-white/[0.02]"
@@ -81,8 +81,8 @@ export function Services() {
                           transition={{ duration: 0.4, ease }}
                           className="overflow-hidden lg:hidden"
                         >
-                          <div className="pb-6 pl-12">
-                            <p className="max-w-prose text-[15px] leading-relaxed text-white/70">
+                          <div className="pb-6 pl-8 sm:pl-12">
+                            <p className="max-w-prose text-[14px] leading-relaxed text-white/70 sm:text-[15px]">
                               {s.description}
                             </p>
                             <ul className="mt-5 flex flex-wrap gap-2">

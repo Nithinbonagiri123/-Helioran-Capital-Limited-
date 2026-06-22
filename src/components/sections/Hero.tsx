@@ -23,24 +23,24 @@ export function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(5,7,13,0.85)_100%)]" />
       </div>
 
-      <div className="container relative flex min-h-[100svh] flex-col justify-between pt-36 pb-12 sm:pt-40">
-        <div className="grid grid-cols-12 gap-y-12">
+      <div className="container relative flex min-h-[100svh] flex-col justify-between pt-28 pb-10 sm:pt-36 sm:pb-12 md:pt-40">
+        <div className="grid grid-cols-12 gap-y-10 sm:gap-y-12">
           <div className="col-span-12 lg:col-span-9">
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease, delay: 0.1 }}
-              className="eyebrow mb-10"
+              className="eyebrow mb-7 sm:mb-10"
             >
               <span>Helioran Capital · Est. Ireland</span>
             </motion.div>
 
-            <h1 className="font-display text-balance text-[44px] leading-[0.98] tracking-tightest sm:text-[64px] md:text-[84px] lg:text-[108px]">
+            <h1 className="font-display text-balance text-[34px] font-medium leading-[1] tracking-tightest xs:text-[40px] sm:text-[58px] md:text-[80px] lg:text-[104px]">
               <RevealLine delay={0.15}>
                 <span className="text-white">Capital with</span>
               </RevealLine>
               <RevealLine delay={0.28}>
-                <span className="text-white/85 italic font-display">conviction.</span>
+                <span className="font-serif italic text-white/90">conviction.</span>
               </RevealLine>
               <RevealLine delay={0.4}>
                 <span className="text-white/55">Advisory with </span>
@@ -52,7 +52,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease, delay: 0.7 }}
-              className="mt-10 max-w-2xl text-[17px] leading-relaxed text-white/65 sm:text-[19px]"
+              className="mt-7 max-w-2xl text-[15px] leading-relaxed text-white/65 sm:mt-10 sm:text-[19px]"
             >
               An Irish investment advisory firm partnering with founders,
               boards, and investors on the decisions that shape capital — from
@@ -63,16 +63,16 @@ export function Hero() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease, delay: 0.85 }}
-              className="mt-12 flex flex-wrap items-center gap-4"
+              className="mt-8 flex w-full flex-col gap-3 sm:mt-12 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
             >
-              <Link href="/contact">
-                <Button variant="primary" size="lg">
+              <Link href="/contact" className="w-full sm:w-auto">
+                <Button variant="primary" size="lg" className="w-full sm:w-auto">
                   Schedule a conversation
                   <ArrowUpRight className="h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="/services">
-                <Button variant="ghost" size="lg">
+              <Link href="/services" className="w-full sm:w-auto">
+                <Button variant="ghost" size="lg" className="w-full sm:w-auto">
                   Explore our practice
                 </Button>
               </Link>
@@ -85,10 +85,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease, delay: 1.05 }}
-          className="mt-16 grid grid-cols-12 items-end gap-y-8"
+          className="mt-12 grid grid-cols-12 items-end gap-y-8 sm:mt-16"
         >
           <div className="col-span-12 md:col-span-9">
-            <div className="grid grid-cols-2 gap-x-10 gap-y-6 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4 sm:gap-x-10 sm:gap-y-6">
               <Metric label="Sectors served" value="11+" />
               <Metric label="Capital advised" value="€340M+" />
               <Metric label="Geographies" value="IE · UK · EU" />
@@ -115,11 +115,11 @@ export function Hero() {
 
 function Metric({ label, value }: { label: string; value: string }) {
   return (
-    <div className="border-t border-white/10 pt-4">
-      <div className="font-display text-2xl tracking-tight text-white sm:text-3xl">
+    <div className="border-t border-white/10 pt-3 sm:pt-4">
+      <div className="font-display text-xl font-medium tracking-tight text-white sm:text-3xl">
         {value}
       </div>
-      <div className="mt-1 text-[11px] uppercase tracking-[0.18em] text-white/45">
+      <div className="mt-1 text-[10px] uppercase tracking-[0.18em] text-white/45 sm:text-[11px]">
         {label}
       </div>
     </div>

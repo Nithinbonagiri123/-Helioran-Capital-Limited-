@@ -69,18 +69,18 @@ export function Insights() {
   });
 
   return (
-    <section id="insights" className="relative py-32 sm:py-40">
+    <section id="insights" className="relative py-20 sm:py-28 lg:py-40">
       <div
         aria-hidden
         className="absolute inset-x-0 top-0 -z-10 h-[40%] bg-[radial-gradient(ellipse_at_top,rgba(31,92,255,0.18),transparent_60%)]"
       />
 
       <div className="container">
-        <div className="grid grid-cols-12 items-end gap-y-10">
+        <div className="grid grid-cols-12 items-end gap-y-8 sm:gap-y-10">
           <div className="col-span-12 md:col-span-8">
-            <p className="eyebrow mb-6">Market intelligence</p>
-            <h2 className="font-display text-balance text-4xl leading-[1.05] tracking-tightest sm:text-5xl md:text-6xl">
-              The Helioran <span className="italic text-white/85">Pulse</span>.
+            <p className="eyebrow mb-5 sm:mb-6">Market intelligence</p>
+            <h2 className="font-display text-balance text-3xl font-medium leading-[1.05] tracking-tightest sm:text-5xl md:text-6xl">
+              The Helioran <span className="font-serif italic text-white/90">Pulse</span>.
             </h2>
           </div>
           <div className="col-span-12 md:col-span-4">
@@ -106,7 +106,7 @@ export function Insights() {
         </div>
 
         {/* Dashboard grid */}
-        <div className="mt-16 grid grid-cols-12 gap-5">
+        <div className="mt-12 grid grid-cols-12 gap-4 sm:mt-16 sm:gap-5">
           {/* Tickers panel */}
           <div className="col-span-12 lg:col-span-8">
             <Panel title="Capital Markets" subtitle="Equities · Rates · Commodities · FX">
@@ -207,19 +207,19 @@ export function Insights() {
                   >
                     <a
                       href="#"
-                      className="group grid grid-cols-12 items-center gap-4 px-6 py-5 transition-colors hover:bg-white/[0.02]"
+                      className="group grid grid-cols-[1fr_auto] gap-x-4 gap-y-2 px-5 py-5 transition-colors hover:bg-white/[0.02] sm:grid-cols-12 sm:items-center sm:gap-4 sm:px-6"
                     >
-                      <span className="col-span-12 sm:col-span-2 text-[11px] uppercase tracking-[0.18em] text-white/50">
+                      <span className="col-start-1 row-start-1 text-[10px] uppercase tracking-[0.18em] text-white/50 sm:col-span-2 sm:text-[11px]">
                         {a.category}
                       </span>
-                      <span className="col-span-12 sm:col-span-7 font-display text-[20px] leading-snug tracking-tight text-white">
+                      <span className="col-span-2 row-start-2 font-display text-[16px] font-medium leading-snug tracking-tight text-white sm:col-span-7 sm:row-start-auto sm:text-[20px]">
                         {a.title}
                       </span>
-                      <span className="col-span-10 sm:col-span-2 hidden text-[12px] text-white/45 sm:flex sm:items-center sm:gap-2">
+                      <span className="col-start-1 row-start-3 mt-1 inline-flex items-center gap-1.5 text-[11px] text-white/45 sm:col-span-2 sm:row-start-auto sm:mt-0 sm:text-[12px]">
                         <Clock className="h-3.5 w-3.5" />
                         {a.readMinutes} min
                       </span>
-                      <span className="col-span-2 sm:col-span-1 ml-auto inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.02] transition-all group-hover:bg-white group-hover:text-ink-950">
+                      <span className="col-start-2 row-span-3 row-start-1 inline-flex h-9 w-9 items-center justify-center self-start rounded-full border border-white/10 bg-white/[0.02] transition-all group-hover:bg-white group-hover:text-ink-950 sm:col-span-1 sm:row-span-1 sm:self-center">
                         <ArrowUpRight className="h-4 w-4" />
                       </span>
                     </a>
@@ -254,16 +254,16 @@ function Panel({
           : "bg-white/[0.015]"
       )}
     >
-      <div className="flex items-center justify-between border-b border-white/[0.05] px-6 py-4">
-        <div>
+      <div className="flex items-center justify-between gap-3 border-b border-white/[0.05] px-5 py-4 sm:px-6">
+        <div className="min-w-0">
           <div className="text-[13px] tracking-tight text-white">{title}</div>
           {subtitle && (
-            <div className="mt-0.5 text-[11px] uppercase tracking-[0.18em] text-white/40">
+            <div className="mt-0.5 truncate text-[10px] uppercase tracking-[0.18em] text-white/40 sm:text-[11px]">
               {subtitle}
             </div>
           )}
         </div>
-        <Activity className="h-3.5 w-3.5 text-white/30" />
+        <Activity className="h-3.5 w-3.5 shrink-0 text-white/30" />
       </div>
       {children}
     </div>
@@ -273,14 +273,14 @@ function Panel({
 function TickerCell({ t }: { t: Ticker }) {
   const positive = t.changePct >= 0;
   return (
-    <div className="px-5 py-5">
-      <div className="flex items-center justify-between">
-        <span className="text-[11px] uppercase tracking-[0.18em] text-white/40">
+    <div className="px-4 py-4 sm:px-5 sm:py-5">
+      <div className="flex items-center justify-between gap-2">
+        <span className="truncate text-[10px] uppercase tracking-[0.18em] text-white/40 sm:text-[11px]">
           {t.symbol}
         </span>
         <span
           className={cn(
-            "inline-flex items-center gap-0.5 text-[11px] tabular",
+            "inline-flex shrink-0 items-center gap-0.5 text-[10px] tabular sm:text-[11px]",
             positive ? "text-emerald-300" : "text-rose-300"
           )}
         >
@@ -299,12 +299,12 @@ function TickerCell({ t }: { t: Ticker }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -6 }}
           transition={{ duration: 0.3 }}
-          className="mt-3 font-display text-2xl tabular leading-none tracking-tight text-white"
+          className="mt-3 font-display text-xl font-medium tabular leading-none tracking-tight text-white sm:text-2xl"
         >
           {t.price.toLocaleString("en-IE", { maximumFractionDigits: t.price < 10 ? 4 : 2 })}
         </motion.div>
       </AnimatePresence>
-      <div className="mt-1 text-[12px] text-white/45">{t.name}</div>
+      <div className="mt-1 truncate text-[11px] text-white/45 sm:text-[12px]">{t.name}</div>
     </div>
   );
 }

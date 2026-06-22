@@ -33,19 +33,19 @@ const linkGroups = [
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/[0.06] pt-20 pb-10">
+    <footer className="relative border-t border-white/[0.06] pt-16 pb-10 sm:pt-20">
       <div className="container">
-        <div className="grid grid-cols-12 gap-y-12">
+        <div className="grid grid-cols-12 gap-y-10 sm:gap-y-12">
           <div className="col-span-12 lg:col-span-5">
-            <div className="font-display text-3xl tracking-tight">
+            <div className="font-display text-2xl font-medium tracking-tight sm:text-3xl">
               Helioran Capital
             </div>
-            <p className="mt-4 max-w-md text-[14px] leading-relaxed text-white/55">
+            <p className="mt-3 max-w-md text-[13px] leading-relaxed text-white/55 sm:mt-4 sm:text-[14px]">
               An Irish investment advisory firm partnering with businesses,
               investors, and developers on the decisions that shape capital.
             </p>
 
-            <ul className="mt-8 space-y-3 text-[13px] text-white/65">
+            <ul className="mt-6 space-y-3 text-[13px] text-white/65 sm:mt-8">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-white/40" />
                 {/* [PLACEHOLDER] Replace with verified registered address */}
@@ -73,7 +73,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="col-span-12 grid grid-cols-2 gap-y-10 sm:grid-cols-3 lg:col-span-7">
+          <div className="col-span-12 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-7">
             {linkGroups.map((group) => (
               <div key={group.title}>
                 <div className="text-[11px] uppercase tracking-[0.22em] text-white/40">
@@ -97,10 +97,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="divider my-12" />
+        <div className="divider my-10 sm:my-12" />
 
-        <div className="flex flex-col-reverse items-start justify-between gap-6 sm:flex-row sm:items-center">
-          <p className="text-[12px] tracking-tight text-white/40">
+        <div className="flex flex-col-reverse items-start justify-between gap-5 sm:flex-row sm:items-center sm:gap-6">
+          <p className="text-[11px] tracking-tight text-white/40 sm:text-[12px]">
             © {new Date().getFullYear()} Helioran Capital Limited. Registered
             in Ireland. All rights reserved.
           </p>

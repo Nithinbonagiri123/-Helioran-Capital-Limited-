@@ -35,19 +35,19 @@ export function MarketTicker() {
 
   return (
     <div className="relative overflow-hidden border-y border-white/[0.06] bg-white/[0.015] backdrop-blur">
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-ink-950 to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-ink-950 to-transparent" />
-      <div className="flex w-max animate-ticker gap-12 py-4">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-ink-950 to-transparent sm:w-24" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-ink-950 to-transparent sm:w-24" />
+      <div className="flex w-max animate-ticker gap-8 py-3 sm:gap-12 sm:py-4">
         {doubled.map((t, i) => (
           <div
             key={`${t.symbol}-${i}`}
-            className="flex items-center gap-3 text-[12px] tabular tracking-tight whitespace-nowrap"
+            className="flex items-center gap-2 text-[11px] tabular tracking-tight whitespace-nowrap sm:gap-3 sm:text-[12px]"
           >
             <span className="text-white/45">{t.symbol}</span>
             <span className="text-white/85">{t.price.toLocaleString("en-IE", { maximumFractionDigits: 2 })}</span>
             <span
               className={cn(
-                "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px]",
+                "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] sm:text-[11px]",
                 t.changePct >= 0
                   ? "bg-emerald-500/10 text-emerald-300"
                   : "bg-rose-500/10 text-rose-300"

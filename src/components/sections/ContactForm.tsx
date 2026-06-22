@@ -118,7 +118,7 @@ export function ContactForm() {
         />
       </Field>
 
-      <div className="flex flex-wrap items-center justify-between gap-6 pt-2">
+      <div className="flex flex-col items-stretch gap-5 pt-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-6">
         <p className="max-w-md text-[12px] leading-relaxed text-white/40">
           Your enquiry is treated as confidential. We respond personally within
           two business days.
@@ -128,6 +128,7 @@ export function ContactForm() {
           variant="primary"
           size="lg"
           disabled={isSubmitting || submitted}
+          className="w-full sm:w-auto"
         >
           <AnimatePresence mode="wait" initial={false}>
             {submitted ? (
