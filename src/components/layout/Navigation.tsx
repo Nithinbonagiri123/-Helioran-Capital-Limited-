@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -45,16 +46,19 @@ export function Navigation() {
         )}
       >
         <div className="container flex h-16 items-center justify-between sm:h-[72px]">
-          <Link href="/" className="group flex items-center gap-2.5 sm:gap-3">
-            <Logo />
-            <div className="flex flex-col leading-none">
-              <span className="font-display text-[15px] font-medium tracking-tight text-white sm:text-[17px]">
-                Helioran Capital
-              </span>
-              <span className="mt-1 hidden text-[10px] uppercase tracking-[0.22em] text-white/40 xs:inline">
-                Investment Advisory · Ireland
-              </span>
-            </div>
+          <Link
+            href="/"
+            aria-label="Helioran Capital — home"
+            className="group flex items-center"
+          >
+            <Image
+              src="/logo.png"
+              alt="Helioran Capital"
+              width={384}
+              height={324}
+              priority
+              className="h-10 w-auto sm:h-11"
+            />
           </Link>
 
           <nav className="hidden items-center gap-1 md:flex">
@@ -149,26 +153,3 @@ export function Navigation() {
   );
 }
 
-function Logo() {
-  return (
-    <span className="relative grid h-9 w-9 place-items-center overflow-hidden rounded-full border border-white/10 bg-gradient-to-b from-white/10 to-white/[0.02]">
-      <svg
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden
-      >
-        <path
-          d="M3 18L9 6L12 12L15 8L21 18"
-          stroke="white"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <circle cx="12" cy="12" r="10.25" stroke="white" strokeOpacity="0.2" />
-      </svg>
-    </span>
-  );
-}

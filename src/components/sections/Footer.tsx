@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 
@@ -37,10 +38,14 @@ export function Footer() {
       <div className="container">
         <div className="grid grid-cols-12 gap-y-10 sm:gap-y-12">
           <div className="col-span-12 lg:col-span-5">
-            <div className="font-display text-2xl font-medium tracking-tight sm:text-3xl">
-              Helioran Capital
-            </div>
-            <p className="mt-3 max-w-md text-[13px] leading-relaxed text-white/55 sm:mt-4 sm:text-[14px]">
+            <Image
+              src="/logo.png"
+              alt="Helioran Capital"
+              width={384}
+              height={324}
+              className="h-14 w-auto sm:h-16"
+            />
+            <p className="mt-5 max-w-md text-[13px] leading-relaxed text-white/55 sm:text-[14px]">
               An Irish investment advisory firm partnering with businesses,
               investors, and developers on the decisions that shape capital.
             </p>
