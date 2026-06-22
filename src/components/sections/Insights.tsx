@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, ArrowDownRight, Activity, Clock } from "lucide-react";
 import type {
@@ -211,8 +212,8 @@ export function Insights() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, ease, delay: i * 0.05 }}
                   >
-                    <a
-                      href="#"
+                    <Link
+                      href={`/insights/${a.slug}`}
                       className="group grid grid-cols-[1fr_auto] gap-x-4 gap-y-2 px-5 py-5 transition-colors hover:bg-white/[0.02] sm:grid-cols-12 sm:items-center sm:gap-4 sm:px-6"
                     >
                       <span className="col-start-1 row-start-1 text-[10px] uppercase tracking-[0.18em] text-white/50 sm:col-span-2 sm:text-[11px]">
@@ -228,7 +229,7 @@ export function Insights() {
                       <span className="col-start-2 row-span-3 row-start-1 inline-flex h-9 w-9 items-center justify-center self-start rounded-full border border-white/10 bg-white/[0.02] transition-all group-hover:bg-white group-hover:text-ink-950 sm:col-span-1 sm:row-span-1 sm:self-center">
                         <ArrowUpRight className="h-4 w-4" />
                       </span>
-                    </a>
+                    </Link>
                   </motion.li>
                 ))}
               </ul>

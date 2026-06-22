@@ -1,6 +1,8 @@
 // Mocked market intelligence data. In production this would come from
 // providers like Refinitiv, Bloomberg, or aggregated public APIs.
 
+import { articles } from "./articles";
+
 export type Ticker = {
   symbol: string;
   name: string;
@@ -22,8 +24,11 @@ export type PropertyMetric = {
   segment: string;
 };
 
+// Preview shape used by the Insights dashboard. Derived from /data/articles so
+// the slug, category, title, dek, etc. stay in sync with the article pages.
 export type InsightArticle = {
   id: string;
+  slug: string;
   category: "Market" | "Capital" | "Property" | "Macro";
   title: string;
   dek: string;
@@ -58,37 +63,12 @@ export const propertyMetrics: PropertyMetric[] = [
   { region: "Limerick", segment: "Mixed-Use", yieldPct: 6.10, ytdPct: 2.8 },
 ];
 
-export const insightArticles: InsightArticle[] = [
-  {
-    id: "irish-private-capital",
-    category: "Capital",
-    title: "Irish private capital deployment hits a five-year high",
-    dek: "Family offices and domestic syndicates are quietly outpacing institutional flows into mid-market mandates.",
-    readMinutes: 6,
-    published: "2026-06-18",
-  },
-  {
-    id: "dublin-office-recalibration",
-    category: "Property",
-    title: "Dublin's office stack is recalibrating, not collapsing",
-    dek: "Prime yields compress as covenant quality, ESG specification, and floorplate flexibility separate winners from the rest.",
-    readMinutes: 8,
-    published: "2026-06-12",
-  },
-  {
-    id: "venture-late-stage",
-    category: "Market",
-    title: "Late-stage venture: discipline returns to growth equity",
-    dek: "Mark-downs have run their course. The next 18 months reward operators with positive unit economics and credible IPO optionality.",
-    readMinutes: 7,
-    published: "2026-06-04",
-  },
-  {
-    id: "ecb-trajectory",
-    category: "Macro",
-    title: "ECB's terminal trajectory and what it means for Irish deal flow",
-    dek: "A measured cutting cycle is reopening leveraged buy-out math — but only for assets with credible cash conversion.",
-    readMinutes: 5,
-    published: "2026-05-28",
-  },
-];
+export const insightArticles: InsightArticle[] = articles.map((a) => ({
+  id: a.slug,
+  slug: a.slug,
+  category: a.category,
+  title: a.title,
+  dek: a.dek,
+  readMinutes: a.readMinutes,
+  published: a.publishedAt,
+}));
