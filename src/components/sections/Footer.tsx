@@ -25,9 +25,9 @@ const linkGroups = [
   {
     title: "Legal",
     links: [
-      { href: "#", label: "Privacy Policy" },
-      { href: "#", label: "Terms of Engagement" },
-      { href: "#", label: "Regulatory Disclosure" },
+      { href: "/privacy", label: "Privacy Policy" },
+      { href: "/terms", label: "Terms of Engagement" },
+      { href: "/regulatory", label: "Regulatory Disclosure" },
     ],
   },
 ];

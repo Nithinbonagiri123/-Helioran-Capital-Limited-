@@ -127,3 +127,72 @@ body {
 .tabular {
   font-variant-numeric: tabular-nums;
 }
+
+/* Long-form prose used on legal/static pages */
+.prose-helioran {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.prose-helioran p {
+  margin-top: 0;
+  margin-bottom: 1.1em;
+}
+.prose-helioran p:last-child {
+  margin-bottom: 0;
+}
+.prose-helioran h3 {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+}
+.prose-helioran ul,
+.prose-helioran ol {
+  margin: 0.4em 0 1.2em 0;
+  padding-left: 1.2em;
+}
+.prose-helioran ul li,
+.prose-helioran ol li {
+  margin-bottom: 0.4em;
+}
+.prose-helioran ul li::marker {
+  color: rgba(255, 255, 255, 0.3);
+}
+.prose-helioran ol li::marker {
+  color: rgba(255, 255, 255, 0.35);
+  font-variant-numeric: tabular-nums;
+}
+.prose-helioran a {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.35);
+  transition: text-decoration-color 0.2s ease;
+}
+.prose-helioran a:hover {
+  text-decoration-color: white;
+}
+.prose-helioran strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+.prose-helioran .callout {
+  margin: 1.4em 0;
+  padding: 1.1em 1.3em;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.prose-helioran .callout strong {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0.5em;
+}

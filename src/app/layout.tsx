@@ -3,6 +3,7 @@ import { Fraunces } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/sections/Footer";
+import { CookieConsent } from "@/components/ui/cookie-consent";
 
 // Display serif used only for italic accents (e.g. "with conviction").
 const fraunces = Fraunces({
@@ -64,6 +65,7 @@ export default function RootLayout({
         <Navigation />
         <main className="relative">{children}</main>
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   );
