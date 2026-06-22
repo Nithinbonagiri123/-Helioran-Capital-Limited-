@@ -1,0 +1,35 @@
+import type { Metadata } from "next";
+import { Services } from "@/components/sections/Services";
+import { CTA } from "@/components/sections/CTA";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Strategic advisory, corporate finance, M&A, venture, property, and private investment consulting — delivered with institutional rigour.",
+};
+
+export default function ServicesPage() {
+  return (
+    <>
+      <section className="relative overflow-hidden border-b border-white/[0.05] pt-44 pb-24 sm:pt-52">
+        <div
+          aria-hidden
+          className="absolute inset-x-0 top-0 -z-10 h-full bg-[radial-gradient(ellipse_at_top,rgba(15,55,168,0.35),transparent_60%)]"
+        />
+        <div className="container">
+          <p className="eyebrow mb-8">Practice areas</p>
+          <h1 className="font-display text-balance text-5xl leading-[1.02] tracking-tightest sm:text-6xl md:text-7xl">
+            Twelve disciplines. <span className="italic text-white/85">One</span> standard of work.
+          </h1>
+          <p className="mt-8 max-w-2xl text-[17px] leading-relaxed text-white/65">
+            Helioran&apos;s practice spans the lifecycle of capital — from the
+            advice that shapes strategy, to the transactions that realise it,
+            to the stewardship that protects it.
+          </p>
+        </div>
+      </section>
+      <Services />
+      <CTA />
+    </>
+  );
+}

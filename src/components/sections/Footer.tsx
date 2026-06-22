@@ -1,0 +1,120 @@
+import Link from "next/link";
+import { ArrowUpRight, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+
+const linkGroups = [
+  {
+    title: "Practice",
+    links: [
+      { href: "/services#strategic-advisory", label: "Strategic Advisory" },
+      { href: "/services#corporate-finance", label: "Corporate Finance" },
+      { href: "/services#ma", label: "M&A Support" },
+      { href: "/services#venture-capital", label: "Venture Advisory" },
+      { href: "/services#property", label: "Property Investment" },
+    ],
+  },
+  {
+    title: "Firm",
+    links: [
+      { href: "/about", label: "About" },
+      { href: "/insights", label: "Market Intelligence" },
+      { href: "/case-studies", label: "Case Studies" },
+      { href: "/contact", label: "Contact" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { href: "#", label: "Privacy Policy" },
+      { href: "#", label: "Terms of Engagement" },
+      { href: "#", label: "Regulatory Disclosure" },
+    ],
+  },
+];
+
+export function Footer() {
+  return (
+    <footer className="relative border-t border-white/[0.06] pt-20 pb-10">
+      <div className="container">
+        <div className="grid grid-cols-12 gap-y-12">
+          <div className="col-span-12 lg:col-span-5">
+            <div className="font-display text-3xl tracking-tight">
+              Helioran Capital
+            </div>
+            <p className="mt-4 max-w-md text-[14px] leading-relaxed text-white/55">
+              An Irish investment advisory firm partnering with businesses,
+              investors, and developers on the decisions that shape capital.
+            </p>
+
+            <ul className="mt-8 space-y-3 text-[13px] text-white/65">
+              <li className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-white/40" />
+                {/* [PLACEHOLDER] Replace with verified registered address */}
+                <span>
+                  Fitzwilliam Square, Dublin 2, D02 XR62, Ireland
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="h-4 w-4 shrink-0 text-white/40" />
+                {/* [PLACEHOLDER] Replace with verified email */}
+                <a
+                  href="mailto:advisory@helioran.ie"
+                  className="hover:text-white"
+                >
+                  advisory@helioran.ie
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="h-4 w-4 shrink-0 text-white/40" />
+                {/* [PLACEHOLDER] Replace with verified phone */}
+                <a href="tel:+35315000000" className="hover:text-white">
+                  +353 (0)1 500 0000
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="col-span-12 grid grid-cols-2 gap-y-10 sm:grid-cols-3 lg:col-span-7">
+            {linkGroups.map((group) => (
+              <div key={group.title}>
+                <div className="text-[11px] uppercase tracking-[0.22em] text-white/40">
+                  {group.title}
+                </div>
+                <ul className="mt-5 space-y-3">
+                  {group.links.map((l) => (
+                    <li key={l.label}>
+                      <Link
+                        href={l.href}
+                        className="group inline-flex items-center gap-1.5 text-[14px] tracking-tight text-white/75 transition-colors hover:text-white"
+                      >
+                        {l.label}
+                        <ArrowUpRight className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="divider my-12" />
+
+        <div className="flex flex-col-reverse items-start justify-between gap-6 sm:flex-row sm:items-center">
+          <p className="text-[12px] tracking-tight text-white/40">
+            © {new Date().getFullYear()} Helioran Capital Limited. Registered
+            in Ireland. All rights reserved.
+          </p>
+          <div className="flex items-center gap-3">
+            <a
+              href="#"
+              aria-label="LinkedIn"
+              className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/[0.02] text-white/70 transition-all hover:bg-white/[0.06] hover:text-white"
+            >
+              <Linkedin className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
