@@ -54,10 +54,10 @@ export function Navigation() {
             <Image
               src="/logo.png"
               alt="Helioran Capital"
-              width={384}
-              height={324}
+              width={364}
+              height={313}
               priority
-              className="h-10 w-auto sm:h-11"
+              className="h-10 w-auto transition-opacity group-hover:opacity-90 sm:h-12"
             />
           </Link>
 

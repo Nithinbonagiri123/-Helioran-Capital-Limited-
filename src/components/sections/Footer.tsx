@@ -41,9 +41,9 @@ export function Footer() {
             <Image
               src="/logo.png"
               alt="Helioran Capital"
-              width={384}
-              height={324}
-              className="h-14 w-auto sm:h-16"
+              width={364}
+              height={313}
+              className="h-16 w-auto sm:h-20"
             />
             <p className="mt-5 max-w-md text-[13px] leading-relaxed text-white/55 sm:text-[14px]">
               An Irish investment advisory firm partnering with businesses,
