@@ -38,11 +38,11 @@ export default function ContactPage() {
                   label="Office"
                   body={
                     <>
-                      Fitzwilliam Square
+                      Ducart Suite, Commercial Campus
                       <br />
-                      Dublin 2, D02 XR62
+                      Castletroy, Limerick
                       <br />
-                      Ireland
+                      V94 Y6FD, Ireland
                     </>
                   }
                 />
@@ -51,10 +51,10 @@ export default function ContactPage() {
                   label="Email"
                   body={
                     <a
-                      href="mailto:advisory@helioran.ie"
+                      href="mailto:niamh@heliorancapital.com"
                       className="hover:text-white"
                     >
-                      advisory@helioran.ie
+                      niamh@heliorancapital.com
                     </a>
                   }
                 />
@@ -62,8 +62,8 @@ export default function ContactPage() {
                   icon={Phone}
                   label="Telephone"
                   body={
-                    <a href="tel:+35315000000" className="hover:text-white">
-                      +353 (0)1 500 0000
+                    <a href="tel:+353838878910" className="hover:text-white">
+                      +353 83 887 8910
                     </a>
                   }
                 />

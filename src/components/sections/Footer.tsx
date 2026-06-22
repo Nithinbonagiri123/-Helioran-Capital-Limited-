@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 
 const linkGroups = [
   {
@@ -48,26 +48,23 @@ export function Footer() {
             <ul className="mt-6 space-y-3 text-[13px] text-white/65 sm:mt-8">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-white/40" />
-                {/* [PLACEHOLDER] Replace with verified registered address */}
                 <span>
-                  Fitzwilliam Square, Dublin 2, D02 XR62, Ireland
+                  Ducart Suite, Commercial Campus, Castletroy, Limerick V94 Y6FD, Ireland
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 shrink-0 text-white/40" />
-                {/* [PLACEHOLDER] Replace with verified email */}
                 <a
-                  href="mailto:advisory@helioran.ie"
+                  href="mailto:niamh@heliorancapital.com"
                   className="hover:text-white"
                 >
-                  advisory@helioran.ie
+                  niamh@heliorancapital.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-white/40" />
-                {/* [PLACEHOLDER] Replace with verified phone */}
-                <a href="tel:+35315000000" className="hover:text-white">
-                  +353 (0)1 500 0000
+                <a href="tel:+353838878910" className="hover:text-white">
+                  +353 83 887 8910
                 </a>
               </li>
             </ul>
@@ -104,15 +101,6 @@ export function Footer() {
             © {new Date().getFullYear()} Helioran Capital Limited. Registered
             in Ireland. All rights reserved.
           </p>
-          <div className="flex items-center gap-3">
-            <a
-              href="#"
-              aria-label="LinkedIn"
-              className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/[0.02] text-white/70 transition-all hover:bg-white/[0.06] hover:text-white"
-            >
-              <Linkedin className="h-4 w-4" />
-            </a>
-          </div>
         </div>
       </div>
     </footer>
